@@ -13,6 +13,36 @@
   }
 }
 
+body {
+
+  background: black url('img/bg-blue.jpg') no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1 {
+
+  font-size: 100px;
+  background-image: linear-gradient(90deg, red, yellow);
+  background-clip: text;
+  color: transparent;
+
+}
+
+input {
+
+  width: 55%;
+  padding: 7px;
+  margin: 8px 0;
+  background-color: lightblue;
+  color: black;
+  position: sticky;
+  font-size: 22px;
+
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
