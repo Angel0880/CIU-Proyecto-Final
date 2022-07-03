@@ -30,7 +30,7 @@ const SearchBar = () => {
                     <input 
                         className='text-2xl'
                         type="text"
-                        placeholder="Busca tu trago ( en su nombre original)..."
+                        placeholder="Busca tu peli, serie..."
                         value={busqueda}
                         onChange={(e) => setBusqueda(e.target.value)}
                 
