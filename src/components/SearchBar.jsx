@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import CardMovie from './CardMovie';
+import '../App.css';
 
 const SearchBar = () => {
     const[pelis, setPelis] = useState([]);
@@ -8,9 +9,9 @@ const SearchBar = () => {
 
     const handleSubmit  = async (e) => {
         e.preventDefault();
-        const data = await fetch('http://www.omdbapi.com/?i=tt3896198&apikey=9b0f82aa&s=${busqueda}');
-        const response = await data.json()
-        setPelis(response.Search)
+        const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=9b0f82aa&s=${busqueda}`);
+        const data = await response.json()
+        setPelis(data.Search)
 
     }
 
@@ -24,11 +25,10 @@ const SearchBar = () => {
   
         <Fragment>
 
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center '>
 
-                <Form onSubmit={handleSubmit()}>
+                <Form onSubmit={handleSubmit}>
                     <input 
-                        className='text-2xl'
                         type="text"
                         placeholder="Busca tu peli, serie..."
                         value={busqueda}
@@ -41,15 +41,15 @@ const SearchBar = () => {
 
             <div>
                 {
-                    pelis.length === 0 ? <p> No se encuentran resultados </p> 
                     
-                    : pelis.map(peli => (
+                    pelis?.map(peli => (
                         <CardMovie 
-                            peli = {peli}
-                            key = {peli.imdID}
-                            nombre = {peli.TItle}
-                            imagen = {peli.Poster}
-                            tipo = {peli.Type}
+                            peli = { peli }
+                            key = { peli.imdbID }
+                            nombre = { peli.Title }
+                            anio = { peli.Year }
+                            imagen = { peli.Poster } 
+                            tipo = { peli.Type }
                         
                         />
 
