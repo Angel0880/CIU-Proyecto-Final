@@ -28,7 +28,7 @@ body {
 h1 {
 
   font-size: 90px;
-  background: -webkit-linear-gradient(red, orange);
+  background: -webkit-linear-gradient(yellow, orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: "center";
@@ -43,12 +43,23 @@ input {
   width: 600px;
   height: 50%;
   padding: 7px;
-  margin: 8px 0;
-  background-color: #fff;
-  color: black;
-  position: sticky;
-  font-size: 22px;
+  margin: 6px 0;
+  background-color: transparent;
+  border: 3px solid #1c7;
+  border-radius: 8px;
 
+}
+input:focus {
+
+  border: 3px solid #5d9;
+  outline: none;
+
+}
+
+input::placeholder {
+  color: purple;
+  font-size:larger;
+  font-style: italic;
 }
 
 .App-header {

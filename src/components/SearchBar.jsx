@@ -42,13 +42,13 @@ const SearchBar = () => {
             
             <div className=' mt-3 flex justify-center items-center' >
 
-                <Button 
-                        variant="secondary"
-                        onClick = {changeBody}
-                    > 
-                        Eliminar busqueda
+                <button 
+                    className="px-5 py-2 mt-3 mr-5 bg-red-600 rounded-lg"
+                    onClick = {changeBody}
+                > 
+                    Eliminar busqueda
 
-                </Button>
+                </button>
             </div>
             <div>
 

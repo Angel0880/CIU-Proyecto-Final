@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
+import lamp from '../img/lampOn.png';
 import '../App.css';
-import { Button } from 'react-bootstrap';
 
 const Header = ( { changeTheme } ) => {
 
@@ -8,22 +8,22 @@ const Header = ( { changeTheme } ) => {
   
     <Fragment>
 
-      <div className='flex justify-center'>
+      <div className='flex justify-end'>
+
+        <button 
+          className='px-5 py-2 mt-3 mr-5 bg-blue-500 rounded-lg' 
+          onClick = {changeTheme} 
+        > 
         
-        <h1>Entertainment</h1>
+          <img src={lamp}/>
+
+        </button>
 
       </div>
 
-      <div className='flex justify-end'>
-
-        <Button 
-            variant="secondary" 
-            className='px-3' 
-            onClick = {changeTheme}
-          > 
-            Cambiar color de fondo
-
-        </Button>
+      <div className=' mb-3 flex justify-center'>
+        
+        <h1>Entertainment</h1>
 
       </div>
 
