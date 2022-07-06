@@ -8,13 +8,24 @@ const Header = ( { changeTheme } ) => {
   
     <Fragment>
 
-      <div className='flex justify-center items-center'>
-
+      <div className='flex justify-center'>
+        
         <h1>Entertainment</h1>
 
       </div>
 
-      <Button variant="primary" css={{ position: "fixed", bottom: "30px", right: "50px" }} onClick = {changeTheme}/>
+      <div className='flex justify-end'>
+
+        <Button 
+            variant="secondary" 
+            className='px-3' 
+            onClick = {changeTheme}
+          > 
+            Cambiar color de fondo
+
+        </Button>
+
+      </div>
 
     </Fragment>
 

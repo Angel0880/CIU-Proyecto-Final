@@ -1,8 +1,7 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { Form } from 'react-bootstrap';
+import React, { Fragment, useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
 import CardMovie from './CardMovie';
 import '../App.css';
-
 
 const SearchBar = () => {
     const[pelis, setPelis] = useState([]);
@@ -14,6 +13,12 @@ const SearchBar = () => {
         const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=9b0f82aa&s=${busqueda}`);
         const data = await response.json()
         setPelis(data.Search)
+
+    }
+
+    const changeBody = () => {
+
+        return setPelis([]);
 
     }
 
@@ -34,7 +39,17 @@ const SearchBar = () => {
                 </Form>
 
             </div>
+            
+            <div className=' mt-3 flex justify-center items-center' >
 
+                <Button 
+                        variant="secondary"
+                        onClick = {changeBody}
+                    > 
+                        Eliminar busqueda
+
+                </Button>
+            </div>
             <div>
 
                 {
