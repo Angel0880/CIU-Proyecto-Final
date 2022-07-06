@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
 import '../App.css';
+import { Button } from 'react-bootstrap';
 
-const Header = () => {
+const Header = ( { changeTheme } ) => {
+
   return (
   
     <Fragment>
@@ -11,6 +13,8 @@ const Header = () => {
         <h1>Entertainment</h1>
 
       </div>
+
+      <Button variant="primary" css={{ position: "fixed", bottom: "30px", right: "50px" }} onClick = {changeTheme}/>
 
     </Fragment>
 

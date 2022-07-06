@@ -15,17 +15,21 @@
 
 body {
 
-  background: black url('img/bg-blue.jpg') no-repeat center center/cover;
+  margin: 0;
   height: 100vh;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
 }
 
 h1 {
 
-  font-size: 90px;
-  background-image: linear-gradient(90deg, red, yellow);
+  font-size: 85px;
+  background-image: linear-gradient(90deg, red, orange, yellow);
+  font-weight: bold;
   background-clip: text;
   color: transparent;
 
@@ -37,7 +41,7 @@ input {
   height: 50%;
   padding: 7px;
   margin: 8px 0;
-  background-color: lightblue;
+  background-color: #fff;
   color: black;
   position: sticky;
   font-size: 22px;
