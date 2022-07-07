@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import CardMovie from './CardMovie';
 import '../App.css';
@@ -51,11 +51,15 @@ const SearchBar = () => {
                 </button>
             </div>
             <div>
+                
                 { !pelis && <p className='mx-auto text-center mt-5 text-blue-600'> No hay resultados. Intenta de nuevo! </p> }
+                
                 { console.log(pelis) }
+
                 {
                    
                     pelis?.map(peli => (
+                        
                         <CardMovie 
                             peli = { peli }
                             key = { peli.imdbID }

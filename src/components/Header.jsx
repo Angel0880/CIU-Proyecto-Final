@@ -21,7 +21,7 @@ const Header = ( { changeTheme } ) => {
 
       </div>
 
-      <div className=' mb-3 flex justify-center'>
+      <div className='mb-3 flex justify-center'>
         
         <h1>Entertainment</h1>
 

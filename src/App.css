@@ -59,7 +59,7 @@ input:focus {
 
 input::placeholder {
   color: purple;
-  font-size:larger;
+  font-size: medium;
   font-style: italic;
 }
 
