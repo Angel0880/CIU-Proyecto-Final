@@ -15,13 +15,6 @@ const SearchBar = () => {
         setPelis(data.Search)
 
     }
-
-    useEffect( () => {
-        
-        console.log("Ejecutando")
-        submitForm();
-        
-    },[])
     
     const changeBody = () => {
 
@@ -38,7 +31,7 @@ const SearchBar = () => {
                 <Form onSubmit={submitForm}>
                     <input 
                         type="text"
-                        placeholder="Busca tu peli, serie...(en inglés)"
+                        placeholder="Busca tu peli, serie o videojuego...(en inglés)"
                         value={busqueda}
                         onChange={(e) => setBusqueda(e.target.value)}
 
@@ -47,7 +40,7 @@ const SearchBar = () => {
 
             </div>
             
-            <div className=' mt-3 flex justify-center items-center' >
+            <div className=' mt-3 flex justify-center'>
 
                 <button 
                     className="px-5 py-2 mt-3 mr-5 bg-red-600 rounded-lg"
@@ -58,7 +51,8 @@ const SearchBar = () => {
                 </button>
             </div>
             <div>
-
+                { !pelis && <p className='mx-auto text-center mt-5 text-blue-600'> No hay resultados. Intenta de nuevo! </p> }
+                { console.log(pelis) }
                 {
                    
                     pelis?.map(peli => (
@@ -73,6 +67,7 @@ const SearchBar = () => {
                         />
 
                         )
+
                     
                     )
                 

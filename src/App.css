@@ -28,7 +28,7 @@ body {
 h1 {
 
   font-size: 90px;
-  background: -webkit-linear-gradient(yellow, orange);
+  background: -webkit-linear-gradient(red, orange, yellow);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: "center";
@@ -44,6 +44,7 @@ input {
   height: 50%;
   padding: 7px;
   margin: 6px 0;
+  color:dodgerblue;
   background-color: transparent;
   border: 3px solid #1c7;
   border-radius: 8px;

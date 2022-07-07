@@ -1,39 +1,37 @@
 import './App.css';
+import React from 'react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Footer from './components/Footer'
-import { useState } from 'react';
-import { createTheme, NextUIProvider } from "@nextui-org/react";
-import { getLocalStorage, setLocalStorage } from "./localStorage";
-
-const lightTheme = createTheme({
-    type: "light",
-  });
-  
-  const darkTheme = createTheme({
-    type: "dark",
-  });
+import { useEffect, useState } from 'react';
 
 function App() {
-  const localStorageTheme = getLocalStorage("dark-theme");
-  const [isDark, setIsDark] = useState(
-    localStorageTheme === null ? true : localStorageTheme
-  );
   
+  const [theme, setTheme] = useState("light");
+
   const changeTheme = () => {
-    setLocalStorage("dark-theme", !isDark);
-    setIsDark(!isDark);
+    setTheme(theme === "light" ? "dark" : "light");
+    localStorage.setItem("theme", JSON.stringify(theme === "light" ? "dark" : "light"));
   };
+  
+  useEffect(() => {
+    
+    console.log("Ejecuta")
+    const theme = JSON.parse(localStorage.getItem("theme"));
+    if (theme) {
+      setTheme(theme);
+    }
 
+  },[])
+  
   return (
-    <div>
-      <NextUIProvider theme={isDark ? darkTheme : lightTheme}>
-        <Header changeTheme = {changeTheme} />
-        <SearchBar />
-        <Footer /> 
-      </NextUIProvider>
-
+    
+    <div className={`min-h-screen w-screen ${theme==="light" ? "bg-white" : "bg-black"}`}>
+      <Header changeTheme = {changeTheme} />
+      <SearchBar />
+      <Footer /> 
     </div>
+
   );
 }
 
