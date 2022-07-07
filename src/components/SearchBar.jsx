@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Form } from 'react-bootstrap';
 import CardMovie from './CardMovie';
 import '../App.css';
 
@@ -10,12 +10,19 @@ const SearchBar = () => {
     const submitForm  = async (e) => {
         e.preventDefault();
         if(!busqueda) return alert("Escribe algo que pueda buscar...");
-        const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=9b0f82aa&s=${busqueda}`);
+        const response = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=9b0f82aa&s=${busqueda}`);
         const data = await response.json()
         setPelis(data.Search)
 
     }
 
+    useEffect( () => {
+        
+        console.log("Ejecutando")
+        submitForm();
+        
+    },[])
+    
     const changeBody = () => {
 
         return setPelis([]);
